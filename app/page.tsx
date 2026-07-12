@@ -136,10 +136,14 @@ export default function RedactionPortal() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://127.0.0.1:8080/api/upload', {
-        method: 'POST',
-        body: formData,
-      });
+      //backend API endpoint for processing the uploaded file render//
+      const response = await fetch(
+  "https://transcript-backend-lmrf.onrender.com/api/upload",
+  {
+    method: "POST",
+    body: formData,
+  }
+);
 
       const data = await response.json();
 
